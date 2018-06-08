@@ -1,0 +1,22 @@
+{-# LANGUAGE MultiParamTypeClasses #-}
+import Data.Char ( chr, ord )
+import System.IO
+import Curry_IO
+
+external_d_C_prim_openBinaryFile :: Curry_Prelude.OP_List Curry_Prelude.C_Char
+  -> C_IOMode -> Cover -> ConstStore -> Curry_Prelude.C_IO C_Handle
+external_d_C_prim_openBinaryFile fn  mode _ _ =
+  toCurry (\s m -> openFile s m >>= \h -> hSetBinaryMode h True
+                                >> return (OneHandle h))
+          fn mode
+
+external_d_C_prim_hGetByte :: C_Handle -> Cover -> ConstStore
+                           -> Curry_Prelude.C_IO Curry_Prelude.C_Int
+external_d_C_prim_hGetByte h _ _ =
+ toCurry (\h -> hGetChar (inputHandle h) >>= return . ord) h
+
+external_d_C_prim_hPutByte :: C_Handle -> Curry_Prelude.C_Int -> Cover
+  -> ConstStore -> Curry_Prelude.C_IO Curry_Prelude.OP_Unit
+external_d_C_prim_hPutByte h c _ _ =
+ toCurry (\h b -> hPutChar (outputHandle h) (chr b)) h c
+

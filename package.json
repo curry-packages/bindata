@@ -1,0 +1,22 @@
+{
+    "name": "bindata",
+    "version": "1.0.0",
+    "author": "Michael Hanus <mh@informatik.uni-kiel.de>",
+    "synopsis": "Library to support reading/writing binary data",
+    "category": [ "Data" ],
+    "dependencies": {
+    },
+    "exportedModules": [ "BinaryFile" ],
+    "compilerCompatibility": {
+    },
+    "testsuite": {
+        "src-dir": "test",
+        "modules": [ "BasicTest" ]
+    },
+    "license": "BSD-3-Clause",
+    "licenseFile": "LICENSE",
+    "source": {
+        "git": "https://git.ps.informatik.uni-kiel.de/curry-packages/bindata.git",
+        "tag": "$version"
+    }
+}
