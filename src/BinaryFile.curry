@@ -11,7 +11,7 @@ module BinaryFile
   )
  where
 
-import IO ( IOMode, Handle, hIsEOF, hClose )
+import System.IO ( IOMode, Handle, hIsEOF, hClose )
 
 --- `Byte` is an alias for `Int`. Could be changed for a more
 --- space efficient representation.
@@ -54,4 +54,3 @@ hGetBinaryContents h = do
          else do b <- hGetByte h
                  bs <- hGetBinaryContents h
                  return (b:bs)
-

@@ -1,7 +1,7 @@
 --- Testing reading/writing binary data
 
-import IO
-import System
+import System.IO
+import System.Process
 import Test.Prop
 
 import BinaryFile
