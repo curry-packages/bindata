@@ -1,13 +1,16 @@
 {
     "name": "bindata",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "author": "Michael Hanus <mh@informatik.uni-kiel.de>",
     "synopsis": "Library to support reading/writing binary data",
     "category": [ "Data" ],
     "dependencies": {
+        "base": ">= 1.0.0, < 2.0.0"
     },
     "exportedModules": [ "BinaryFile" ],
     "compilerCompatibility": {
+        "pakcs": ">= 2.0.0, < 3.0.0",
+        "kics2": ">= 2.0.0, < 3.0.0"
     },
     "testsuite": {
         "src-dir": "test",
