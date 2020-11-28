@@ -1,8 +1,9 @@
 --- Testing reading/writing binary data
 
-import IO
-import System
 import Test.Prop
+
+import System.IO
+import System.Process ( system )
 
 import BinaryFile
 
@@ -43,17 +44,17 @@ testGetBinaryContents = genFiles `returns` True
  where
   genFiles = do
     h1 <- openBinaryFile "XXX0" WriteMode
-    mapIO_ (hPutByte h1) [0..255]
+    mapM_ (hPutByte h1) [0 .. 255]
     hClose h1
     h2 <- openBinaryFile "XXX0" ReadMode
     bytes <- hGetBinaryContents h2
-    return (bytes == [0..255])
+    return (bytes == [0 .. 255])
 
 testGenBinFile = genFiles `returns` True
  where
   genFiles = do
     h1 <- openBinaryFile "XXX1" WriteMode
-    mapIO_ (hPutByte h1) [0..255]
+    mapM_ (hPutByte h1) [0 .. 255]
     hClose h1
     copyBinaryFile     "XXX1" "XXX2"
     compareBinaryFiles "XXX1" "XXX2"

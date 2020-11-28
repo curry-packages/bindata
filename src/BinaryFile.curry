@@ -2,7 +2,7 @@
 --- Library to support reading/writing binary files.
 ---
 --- @author Michael Hanus
---- @version June 2018
+--- @version November 2020
 ------------------------------------------------------------------------------
 
 module BinaryFile
@@ -11,7 +11,7 @@ module BinaryFile
   )
  where
 
-import IO ( IOMode, Handle, hIsEOF, hClose )
+import System.IO ( IOMode, Handle, hIsEOF, hClose )
 
 --- `Byte` is an alias for `Int`. Could be changed for a more
 --- space efficient representation.
