@@ -2,10 +2,10 @@
 --- Library to support reading/writing binary files.
 ---
 --- @author Michael Hanus
---- @version November 2020
+--- @version December 2020
 ------------------------------------------------------------------------------
 
-module BinaryFile
+module System.IO.BinaryFile
   ( IOMode, Handle -- from IO
   , openBinaryFile, hGetByte, hPutByte, hGetBinaryContents
   )

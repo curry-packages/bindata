@@ -5,7 +5,7 @@ import Test.Prop
 import System.IO
 import System.Process ( system )
 
-import BinaryFile
+import System.IO.BinaryFile
 
 -- Copies a binary file.
 copyBinaryFile :: String -> String -> IO ()
