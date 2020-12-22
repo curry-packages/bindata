@@ -17,7 +17,7 @@ import System.IO ( IOMode, Handle, hIsEOF, hClose )
 --- space efficient representation.
 type Byte = Int
 
---- Like 'openFile', but open the file in binary mode.
+--- Like 'System.IO.openFile', but open the file in binary mode.
 --- Thus, no translation of character is performed when reading
 --- or writing a file.
 --- Returns a handle to read and write the binary stream
